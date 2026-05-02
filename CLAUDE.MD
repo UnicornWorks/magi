@@ -105,18 +105,42 @@ Definition of done:
 
 If time collapses, keep the generator, CLI, AGENTS fallback, and Markdown output; defer richer PDF formatting and advanced code analysis.
 
+## Week 3 v0.1 Scope
+
+Week 3 focuses on `@magi/fria-forge` v0.1.0: a local CLI and library that turns project metadata, intended-use context, risk inputs, mitigations, and monitoring plans into a practical Fundamental Rights Impact Assessment draft.
+
+Build:
+
+- Package name: `@magi/fria-forge`.
+- CLI binary: `magi-fria-forge`.
+- FRIA draft generator for high-risk AI system context, affected groups, fundamental-rights risks, mitigations, human oversight, monitoring, and residual risk notes.
+- Local/manual input workflow with examples that can be run without MAGI Audit.
+- Markdown output as the primary artifact.
+- Clear disclaimer in generated output and docs: generated FRIAs are draft tooling artifacts, not legal advice.
+- Minimal README and examples showing self-hosted/manual compliance drafting.
+
+Definition of done:
+
+- `@magi/fria-forge@0.1.0` builds and tests pass.
+- CLI can generate a complete FRIA draft from sample metadata.
+- Missing required metadata produces actionable messages.
+- Generated output is visibly marked as a draft for external legal review.
+
+If time collapses, keep the generator, CLI, Markdown output, sample metadata, and disclaimer; defer advanced risk scoring, PDF formatting, and integrations.
+
 ## Explicit Out Of Scope
 
-Do not add these to the Week 1 or Week 2 OSS implementation:
+Do not add these to the Week 1, Week 2, or Week 3 OSS implementation:
 
 - MAGI Audit product code, SaaS dashboards, Stripe, pricing, or hosted workflows.
 - SSO, RBAC, organization management, approval chains, auditor views, or regulator direct submission.
 - 10-year retention guarantees, SOC 2 claims, managed cryptographic signing, or SLA language.
 - BSL, enterprise package variants, or commercial licensing code.
-- `@magi/fria-forge` or `@magi/post-market` beyond placeholders unless explicitly assigned.
+- `@magi/post-market` beyond placeholders unless explicitly assigned.
 - Hallucination and drift detectors, Postgres/Supabase storage, postmortem LLM RCA, OpenTelemetry, and UI unless the current milestone is v0.2+.
-- External publishing flows, blog/CMS publishing, FCM/push notification review, and marketing automation.
-- Legal advice. Templates and exports are tooling, not legal counsel.
+- npm publish, external publishing flows, public blog/CMS publishing, FCM/push notification review, and marketing automation.
+- Hosted MAGI Audit workflows, public regulator submission flows, and managed legal/compliance services.
+- Legal advice. Templates, generated FRIAs, and exports are draft tooling artifacts, not legal counsel; external legal review remains outside local OSS scope.
 
 ## Orchestration Rules
 
@@ -130,7 +154,7 @@ Delegation model:
 - Main agent reviews each worker output before accepting it.
 - If output is below the quality threshold, main agent recursively asks for focused fixes until the unit passes.
 - Main agent runs PDCA loops: plan the unit, do the implementation, check against docs/tests/policy, act by fixing or delegating again.
-- These main-orchestrator, reasoning-low worker, no-revert, and recursive PDCA rules continue through Week 2 and later milestones.
+- These main-orchestrator, reasoning-low worker, no-revert, recursive review/repair, and PDCA-until-gates-pass rules continue through Week 3 and later milestones.
 
 Quality gates:
 

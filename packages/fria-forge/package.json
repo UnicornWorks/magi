@@ -1,0 +1,46 @@
+{
+  "name": "@magi/fria-forge",
+  "version": "0.1.0",
+  "description": "Generate draft EU AI Act Fundamental Rights Impact Assessments from structured system metadata",
+  "keywords": [
+    "eu-ai-act",
+    "fria",
+    "fundamental-rights",
+    "ai-governance",
+    "high-risk-ai",
+    "compliance"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "magi-fria-forge": "./dist/cli/index.mjs"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit",
+    "lint": "biome check ."
+  },
+  "dependencies": {
+    "@magi/core": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unicornworks/magi.git",
+    "directory": "packages/fria-forge"
+  }
+}

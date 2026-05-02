@@ -110,6 +110,22 @@ Expected package work:
 
 Week 2 done means the package builds, tests, and the CLI can generate a complete 9-section Annex IV draft from sample repo context. PDF export is best-effort and must not block Markdown generation.
 
+## Week 3 v0.1 Implementation Scope
+
+Focus on `@magi/fria-forge` v0.1.0.
+
+Expected package work:
+
+- Package: `@magi/fria-forge`.
+- CLI: `magi-fria-forge`.
+- FRIA draft generator for high-risk AI system context, intended use, affected groups, fundamental-rights risks, mitigations, human oversight, monitoring, and residual risk notes.
+- Local/manual metadata input with actionable errors for missing required fields.
+- Markdown as the primary output.
+- README and examples for manual, self-hosted FRIA drafting.
+- Visible disclaimer in docs and generated output: FRIA output is a draft tooling artifact, not legal advice.
+
+Week 3 done means the package builds, tests, and the CLI can generate a complete FRIA draft from sample metadata. Generated FRIAs must be clearly marked for external legal review.
+
 ## Explicitly Out Of Scope
 
 Avoid scope creep. Unless a later task explicitly says otherwise, do not build:
@@ -121,8 +137,9 @@ Avoid scope creep. Unless a later task explicitly says otherwise, do not build:
 - BSL/enterprise variants.
 - Other package implementations beyond assigned placeholders.
 - v0.2+ features such as Supabase/Postgres storage, LangChain/Mastra wrappers, hallucination/drift detectors, LLM RCA, UI, or OpenTelemetry.
-- External publish/blog/CMS flows, FCM or push-notification review, or marketing automation.
-- Legal advice. Drafts and exports are tooling, not counsel.
+- npm publish, external publish/blog/CMS flows, FCM or push-notification review, or marketing automation.
+- Hosted MAGI Audit workflows, public regulator submission flows, or managed legal/compliance services.
+- Legal advice. Drafts, generated FRIAs, and exports are tooling artifacts, not counsel; external legal review is outside local OSS scope.
 
 ## Main/Worker Orchestration
 
@@ -135,9 +152,9 @@ Rules:
 - Workers run at reasoning level low.
 - Workers edit only assigned files and never revert edits from others.
 - Main reviews all worker output before integration.
-- If quality is below threshold, main asks the same worker or a follow-up worker for focused fixes.
+- If quality is below threshold, main recursively asks the same worker or a follow-up worker for focused review and repair.
 - Main repeats PDCA until quality gates pass: plan, do, check, act.
-- These main-orchestrator, reasoning-low worker, no-revert, and recursive PDCA rules continue through Week 2 and later milestones.
+- These main-orchestrator, reasoning-low worker, no-revert, recursive review/repair, and PDCA-until-gates-pass rules continue through Week 3 and later milestones.
 
 Quality threshold:
 

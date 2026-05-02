@@ -2,15 +2,23 @@
 
 > The OSS family for running AI agents under EU AI Act.
 
-MAGI OSS is a permanent MIT-licensed runtime layer for AI agent SRE and compliance. The Week 1 v0.1 scope ships the monorepo foundation plus the first package, `@magi/incident`, with loop and cost-spike detection, responders, storage adapters, tests, and examples.
+MAGI OSS is a permanent MIT-licensed runtime layer for AI agent SRE and compliance. Week 1 ships `@magi/incident`, Week 2 ships `@magi/annex-iv`, and Week 3 ships `@magi/fria-forge` for local FRIA drafting.
 
 ## Packages
 
 - `@magi/core`: shared types used across the MAGI OSS family.
 - `@magi/incident`: self-hostable incident management for AI agents.
 - `@magi/annex-iv`: EU AI Act Annex IV technical documentation drafts from `AGENTS.md` and codebase metadata.
+- `@magi/fria-forge`: Fundamental Rights Impact Assessment drafts from local project metadata.
 
-Planned packages include `@magi/fria-forge` and `@magi/post-market`.
+Planned packages include `@magi/post-market`.
+
+## CLIs
+
+- `magi-annex-iv`: generate Annex IV technical documentation drafts.
+- `magi-fria-forge`: generate FRIA draft Markdown for external legal review.
+
+Generated compliance documents are draft tooling artifacts, not legal advice.
 
 ## Development
 
