@@ -1,0 +1,44 @@
+{
+  "name": "@magi/incident",
+  "version": "0.1.0",
+  "description": "Self-hostable incident management for AI agents (EU AI Act ready)",
+  "keywords": [
+    "ai-agent",
+    "incident-management",
+    "sre",
+    "eu-ai-act",
+    "compliance",
+    "langchain",
+    "vercel-ai"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit",
+    "lint": "biome check ."
+  },
+  "dependencies": {
+    "@magi/core": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unicornworks/magi.git",
+    "directory": "packages/incident"
+  }
+}

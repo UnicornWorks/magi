@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM"],
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@magi/incident": ["./src/index.ts"]
+    },
+    "types": ["node", "vitest/globals"]
+  },
+  "include": ["src", "test", "examples", "*.config.ts"]
+}

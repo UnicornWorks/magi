@@ -1,0 +1,46 @@
+{
+  "name": "@magi/annex-iv",
+  "version": "0.1.0",
+  "description": "Generate EU AI Act Annex IV technical documentation from AGENTS.md and codebase metadata",
+  "keywords": [
+    "eu-ai-act",
+    "annex-iv",
+    "technical-documentation",
+    "ai-agent",
+    "compliance",
+    "agents-md"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "magi-annex-iv": "./dist/cli/index.mjs"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit",
+    "lint": "biome check ."
+  },
+  "dependencies": {
+    "@magi/core": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unicornworks/magi.git",
+    "directory": "packages/annex-iv"
+  }
+}
